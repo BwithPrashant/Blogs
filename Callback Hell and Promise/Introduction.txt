@@ -1,0 +1,64 @@
+What is callback hell?
+
+When a number of task is to be perfomed sequentially,code become messy as no of taska increases.
+Let's uderstand it by an exampple
+we have three task first , second and third to be executed sequentially that means later function can be start executing
+only after former is finished.
+
+Code snippet:
+
+function first(val,callback)
+{
+    callback(val + "first",false);
+}
+
+function second(val,callback)
+{
+    callback(val + "second",false);
+}
+
+function third(val,callback)
+{
+    callback(val + "third",false);
+}
+
+function MainFunc()
+{
+    var val = "Zero ";
+    first(val,function(val,err)
+    {
+       if(!err)
+       {
+           second(val,function(val,err)
+               {
+                   if(!err)
+                   {
+                        third(val,function (val,err) {
+                            if(!err)
+                            {
+                                console.info("message is " + val);
+                            }
+                            else
+                            {
+                                console.log("Error in third");
+                            }
+                        });
+                   }
+                   else
+                   {
+                       console.log("Error in second");
+                   }
+               }
+           );
+       }
+       else
+       {
+           console.log("Error in first");
+       }
+    });
+}
+
+MainFunc();
+
+You can see code will be more messy , if no of task would be larger.
+This is callback hell.
