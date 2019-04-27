@@ -1,0 +1,19 @@
+function first(val)
+{
+    return val + "first";
+}
+function second(val)
+{
+    return val + "second";
+}
+function third(val)
+{
+    return val + "third";
+}
+var x = new Promise(function (resolve,reject) {
+   resolve("zero");
+});
+
+x.then(first).then(second).then(third).then(function (val) {
+    console.log(val);
+});
