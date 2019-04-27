@@ -1,0 +1,32 @@
+What is Callback?
+
+Callback is a function that can be passed in a function as an argument.
+Basically you are passing a reference to a function as parameter.
+
+For better understanding , let's take an example in javascript.
+
+Here is the code snippet:-
+
+function fun(a,b)
+{
+    console.log("Message is  " + a + " " + b);
+}
+function MainFunc()
+{
+    ShowUserName("Hello ",x);
+	//Do some other work.
+}
+function ShowUserName(greeting,callback)
+{
+	//suppose it is fetched from database
+    var name = "prashant";
+    callback(greeting,name);
+}
+MainFunc();
+
+The purpose of MainFunc() is to display welcome messege , but in this function only greeting ("Hello") is known.
+Username will be fetched from username, So in ShowUserName() we passed the greeting and callback function as well.
+Now it is useful in case of async programming. In MainFunc() ,we just called ShowUserName() and now we are not 
+bothering about time taken in database access.We can perform other tasks now.Meanwhile when username will be fetched
+from database it will be displayed.
+That's the beauty of callback.
