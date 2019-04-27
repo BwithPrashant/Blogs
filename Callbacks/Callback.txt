@@ -25,7 +25,7 @@ function ShowUserName(greeting,callback)
 MainFunc();
 
 The purpose of MainFunc() is to display welcome messege , but in this function only greeting ("Hello") is known.
-Username will be fetched from username, So in ShowUserName() we passed the greeting and callback function as well.
+Username will be fetched from database, So in ShowUserName() we passed the greeting and callback function as well.
 Now it is useful in case of async programming. In MainFunc() ,we just called ShowUserName() and now we are not 
 bothering about time taken in database access.We can perform other tasks now.Meanwhile when username will be fetched
 from database it will be displayed.
