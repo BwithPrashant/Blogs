@@ -11,3 +11,5 @@ instantly and goes to web api's. Now once it's executed , it is transferred to e
 empty , events from event queue is popped and pushed to call stack.
 
 That's how Node js works asynchronously in single threaded way. 
+
+Node js is suitable for I/O intensive applications not for cpu intensive apps.
