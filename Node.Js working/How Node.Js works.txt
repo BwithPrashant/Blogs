@@ -1,0 +1,13 @@
+How Node.Js works?
+
+Node js is single threaded,non blocking and asynchronous.
+
+Non blocking and asynchronous-> while performing time consuming tasks ,
+								other tasks are also running in parallel
+
+It has a call stack , webapi's and event queue.
+When a time consuming task like database access,I/0 operation etc. arrives,It goes to call stack and dissapeared
+instantly and goes to web api's. Now once it's executed , it is transferred to event queue.Now whenever stack becomes
+empty , events from event queue is popped and pushed to call stack.
+
+That's how Node js works asynchronously in single threaded way. 
