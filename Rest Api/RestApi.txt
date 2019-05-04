@@ -1,0 +1,33 @@
+Rest is an architectural style or design patter for Api's.
+Server exposes api's to client so that they can access resources lying at server.
+Rest makes easier to call Api's and access resources.
+Rest stands for REpresentational State Transfer.
+It means when a client request for a resource to server , representation of state of the requested
+resource is returned.These representations may be JSON , HTML etc.
+
+Rules for a application to be Restful :-
+1.Each resources at server is given a URI (Universal resource identifier).
+2.Application must be stateless.Server doesn't store any informtion of previous request.
+3.Client sends all information to server needed to perform the request.Server can send additional information
+in response.
+4.Client and server are independent to each other.They don't interleave each other action.They interacts
+only by requests and responses.
+
+Why restlessness is important?
+1.It helps in scaling api's to millions of concurrent users by deploying it to multiple servers.Any server can handle any
+request as there is no session related dependency.
+2.It removes all server side state synchronization logic.
+3.Session management is done by client side , not by server side , in turn efficiency of server increases.
+
+How to maintain session in restful service?
+
+In restful application , no any information of previous request is stored at server side.So how the session in
+login application is managed?
+There are two ways of doing it:-
+1.When the client send the login request with username and password.Server authenticate user and send response back
+to client.Also server includes user and password info in response packet. Next time , when client makes any request,
+It also includes user and password info in request packet and it is authenticated by server side and request is performed.
+
+2.When a client send the login request with username and passowrd info , server create a token and send this token in response.
+This token is stored on server side and persist in memory.It is used as session timeout value.
+Whenever new request is made, token is also included. Server matches the token and perform the request. 
