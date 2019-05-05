@@ -31,3 +31,8 @@ It also includes user and password info in request packet and it is authenticate
 2.When a client send the login request with username and passowrd info , server create a token and send this token in response.
 This token is stored on server side and persist in memory.It is used as session timeout value.
 Whenever new request is made, token is also included. Server matches the token and perform the request. 
+
+
+The alternative of Rest is SOAP.In soap url is something like  "www.mytutorial.com/questions?subject=java"
+In Rest -> "www.mytutorial.com/questions/java"
+We can see the difference , in Rest resources are given a uri and can be accessed or modified easily.
