@@ -1,0 +1,44 @@
+Steps:-
+1.Do DFS traversal of graph.
+2.If a node v has an adjacent node u , which is already visited and u is not parent of v.
+	Then there is an edge.
+	
+Pseudo Code:
+
+void init()
+{
+	vector<int>adj[n];
+	bool mark[n] = {false};
+	parent = -1;
+}
+
+bool isCycle()
+{
+	for(all vertex v)
+	{
+		if(mark[v] == false)
+		{
+			if(dfs(v) == true)
+				return true;
+		}
+	}
+	return false;
+}
+
+bool dfs(int v,int parent)
+{
+	mark[v] = 1;
+	for(all v's adjacent vertex u)
+	{
+		if(mark[u] == 0)
+		{
+			if(dfs(u,v) == true)
+				return true;
+		}
+		else if(u != parent)
+		{
+			return true;
+		}
+	}
+	return false;
+}

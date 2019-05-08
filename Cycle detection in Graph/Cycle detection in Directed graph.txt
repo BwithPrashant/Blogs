@@ -1,0 +1,46 @@
+Steps:-
+1.Run DFS for all nodes which are not yet discovered in DFS traversal.
+2.If there is a back edge , cycle is present in graph otherwise not.
+ Back edge -> During DFS traversal , an edge which goes to the any nodes which
+ are discovered and currently present in recursion stack or goes to itself is called an back edge.
+
+Pseudo code:-
+void init()
+{
+	vector<int>adj[n];
+	bool mark[n] = {false};
+	bool recStack[n] = {false};
+}
+
+bool isCycle()
+{
+	for(all vertex v)
+	{
+		if(mark[v] == false)
+		{
+			if(dfs(v) == true)
+				return true;
+		}
+	}
+	return false;
+}
+
+bool dfs(int v)
+{
+	mark[v] = 1;
+	recStack[v] = 1;
+	for(all v's adjacent vertex u)
+	{
+		if(mark[u] == 0)
+		{
+			if(dfs(u) == true)
+				return true;
+		}
+		else if(recStack[u] == 1)
+		{
+			return true;
+		}
+	}
+	recStack[v] = 1;
+	return false;
+}
