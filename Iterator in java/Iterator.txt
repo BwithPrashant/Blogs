@@ -1,0 +1,24 @@
+How to iterate in HashMap?
+
+HashMap<Key,Value>hm = new HashMap<Key,Value>();
+
+1.hm.entrySet() -> returns all key value pair which is of type Map.Entry
+2.hm.entrySet().iterator() -> returns a cursor or pointer to hasmap. iterator has 
+	hasNext() and next() method.
+3.mapElement.getkey() -> returns key 
+	mapElement.getValue() -> returns value
+	where mapElement is a single key value pair.
+	
+-----------------------Using Iterator---------------------------------
+Iterator itr = hm.entrySet().iterator();
+while(itr.hasNext())
+{
+	Map.Entry mapElement = (Map.Entry)itr.next();
+	Sysout(mapElement.getkey() + mapElement.getValue());
+}
+
+-----------------------Using for loop----------------------------------
+for(Map.Entry mapElement : hm.entrySet())
+{
+	Sysout(mapElement.getkey() + mapElement.getValue());
+}
