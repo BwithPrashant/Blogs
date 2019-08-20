@@ -7,6 +7,7 @@ For better understanding , let's take an example in javascript.
 
 Here is the code snippet:-
 
+//utility functions
 function fun(a,b)
 {
     console.log("Message is  " + a + " " + b);
