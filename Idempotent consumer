@@ -1,0 +1,9 @@
+In an entriprise application , it is good to have a message broker which guarntees the message delivery to consumer at least once.
+It might leads to sending same message multiple times to the consumer. Consumer should also handle the duplicate message properly. One side effect can be, 
+that consumer is processing the same message repeatedly. e.g. Once consumer recieves an account balance , it debit an amount x from the total balance. 
+Suppose the same account balance got debited multiple times , it can lead to incorrect account balance in the end. 
+    So there is a need of implementing Idempotent consumer, who can handle dupliocate message gracefully. Some consumers are idempotent naturally. 
+We can make a consumer idempotent by :-
+1. Maintaining a database table , where we store id of message gennerated by business entities. Each time a new message received , we check for the 
+duplicacy by querying by ID into the database.
+2. Use a separete PROCESSED_MESSAGE table. Here we are checking the message itself for duplicay into PROCESSED_MESSAGE table.
